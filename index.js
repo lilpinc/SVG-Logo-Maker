@@ -1,6 +1,6 @@
 const inquirer = require('inquirer');
 const fs = require('fs/promises');
-const {Circle, Square, Triangle} = require('lib/shapes.js');
+const {Circle, Square, Triangle} = require('./lib/shapes.js');
 
 const questions = [
     {
@@ -19,7 +19,7 @@ const questions = [
         type: 'list',
         name: 'shape',
         message: 'What shape would you like your logo to be?',
-        choices: ['circle', 'square', 'rectangle'],
+        choices: ['circle', 'square', 'triangle'],
         default: 'square'
     },
     {
@@ -31,42 +31,43 @@ const questions = [
     
 ]
 function writeToFile(fileName, answers) {
-    let svgString = '';
+    let svgString = "";
     svgString = '<svg version="1.1" width="400" height="400" xmlns="http://www.w3.org/2000/svg">';
-    svgString += "<g>";
+    svgString += '<g>';
     svgString += `${answers.shape}`;
 
     let shapeChoice;
-    if (answers.shape === "Triangle") {
+    if (answers.shape === "triangle") {
       shapeChoice = new Triangle();
-      svgString += `<polygon height="400" width="400" points="200,10 300,190 100,190" fill="${answers.shapecolor}"/>`;
+      svgString += `<polygon height="600" width="600" points="200,10 300,190 100,190" fill="${answers.shapecolor}"/>`;
      
-    } else if (answers.shape === "Square") {
+    } else if (answers.shape === "square") {
       shapeChoice = new Square();
-      svgString += `<rect x="50" y="20" width="400" height="400" fill="${answers.shapecolor}"/>`;
+      svgString += `<rect x="50" y="20" width="600" height="600" fill="${answers.shapecolor}"/>`;
     } else {
       shapeChoice = new Circle();
-      svgString += `<circle cx="50" cy="50" r="40" stroke="black" width="400px" height="400px" fill="${answers.shapecolor}"/>`;
+      svgString += `<circle cx="50" cy="50" r="100" stroke="black" width="600" height="600" fill="${answers.shapecolor}"/>`;
     }
 
-    svgString += `<text x="150" y="130" text-anchor="middle" font-size="40" fill="${answers.textcolor}">${answers.logo}</text>`;
-    svgString += "</g>";
-    svgString += "</svg>";
+    svgString += `<text text-anchor="middle" font-size="40" fill="${answers.textcolor}">${answers.logo}</text></g></svg>`;
 
   
-    fs.writeFile(fileName, svgString, (err) => err ? console.log(err) : console.log('Your logo has successfully been created!'));
+    fs.writeFile(fileName, svgString, (err) => {
+    err ? console.log(err) : console.log('Your logo has successfully been created!');
 
-};
+});
+}
 
 function beginQuestions() {
 
     inquirer.prompt(questions)
     .then ((answers) => {
-        if (answers.text.length > 3) {
+        if (answers.logo.length > 3) {
             console.log("Logo must be no more than 3 characters");
             beginQuestions();
         } else {
             writeToFile("logo.svg", answers);
+            console.log('Your logo has successfully been created!')
         }
     });
    
