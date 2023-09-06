@@ -13,6 +13,7 @@ function makeLogo(answers) {
         err ? console.log(err) : console.log('Your logo has successfully been created!')
 
     });
+    console.log('Your logo has successfully been created!');
 }
 
 function beginQuestions() {
