@@ -31,9 +31,11 @@
 
   Video Link:
 
+  https://drive.google.com/file/d/1gy9aKt9t5Z--8xPn-ciyPhFY2KSqYg4K/view
 
-  Screenshot:
-  ![Screenshot](<images/Screen Shot 2023-08-28 at 1.41.23 PM.png>)
+  Screenshots:
+  ![Screenshot](<images/Screen Shot 2023-09-06 at 1.18.12 PM.png>)
+  ![Screenshot](<images/Screen Shot 2023-09-06 at 1.22.28 PM.png>)
 
   ### Questions?
 
