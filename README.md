@@ -25,7 +25,11 @@
 
   ### Installation
 
-  1. clone repo in terminal (hhtps://github.com/lilpinc/SVG-Logo-Maker) 2. cd into cloned  directory  3. in terminal directory, download Inquirer and Jest package by entering npm  i  4. Enter node index.js  5. follow the prompt to create your logo!
+  1. clone repo in terminal (hhtps://github.com/lilpinc/SVG-Logo-Maker) 
+  2. cd into cloned  directory  
+  3. in terminal directory, download Inquirer and Jest package by entering npm  i  
+  4. Enter node index.js  
+  5. follow the prompt to create your logo!
 
   ### Video Demonstration
 
