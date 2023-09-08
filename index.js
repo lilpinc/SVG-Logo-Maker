@@ -12,10 +12,10 @@ function makeLogo(answers) {
     let svgString = setShape(answers);
     // write file with svgstring and filename.
     fs.writeFile(fileName, svgString, (err) => {
-        err ? console.log(err) : console.log('Your logo has successfully been created!')
+        err ? console.log(err) : console.log('Generated logo.svg')
 
     });
-    console.log('Your logo has successfully been created!');
+    console.log('Generated logo.svg');
 }
 
 function beginQuestions() {
